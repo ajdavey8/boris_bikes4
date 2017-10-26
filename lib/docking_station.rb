@@ -1,10 +1,11 @@
-require 'bike'
-DEFAULT_CAPACITY = 20
-class DockingStation
+require_relative 'bike'
 
+class DockingStation
+  DEFAULT_CAPACITY = @capacity
   attr_reader :bike_count
 
-  def initialize(bike_count)
+  def initialize(bike_count, capacity = 20)
+    @capacity  = capacity
     @bike_count = []
     bike_count.times { @bike_count << Bike.new }
   end
