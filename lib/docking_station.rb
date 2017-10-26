@@ -1,3 +1,5 @@
+require 'bike'
+DEFAULT_CAPACITY = 20
 class DockingStation
 
   attr_reader :bike_count
@@ -14,7 +16,7 @@ class DockingStation
   end
 
    def full?
-     @bike_count.count >= 20 ? true : false
+     @bike_count.count >= DEFAULT_CAPACITY ? true : false
    end
 
   public
@@ -30,14 +32,6 @@ class DockingStation
 
    raise "DockingStation full." if full?
    amount_of_bikes.times { @bike_count << Bike.new }
-
  end
-
-end
-
-class Bike
-
-  def working?
-  end
 
 end
